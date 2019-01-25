@@ -1,0 +1,14 @@
+.add-item{
+    .btn{       
+        background: #fff;
+        color: rgb(91, 173, 187);
+        border-color: rgb(91, 173, 187);
+        margin-top: 10px;
+        float: right;
+        &:hover{
+            background: rgb(91, 173, 187);
+            color: #fff;
+            transition: all 0.4s ease-in-out;
+        }
+    }
+}

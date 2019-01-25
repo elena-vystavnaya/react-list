@@ -1,0 +1,16 @@
+.row{
+    margin: 0;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden{
+    display: none;
+}
+
+.row.flex{
+    padding: 10px 15px;
+}
