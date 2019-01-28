@@ -7,7 +7,10 @@ export default class SearchPanel extends Component {
         return (
             <div className="search">
                 <input className="form-control" type="search" placeholder='Type here to search'/>
-                <ItemFilter/>
+                <ItemFilter
+                    items={this.props.items}
+                    filterDone={this.props.filterDone}
+                />
             </div>
             
         )

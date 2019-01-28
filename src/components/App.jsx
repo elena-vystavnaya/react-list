@@ -26,6 +26,7 @@ export default class App extends Component {
         }
     }
 
+    // Important Item
     importantItem = (index) => {
         const list = this.state.items; //клон items array
         const item = list[index]; // items[item] кликнутый итем
@@ -36,6 +37,7 @@ export default class App extends Component {
         });
     }
 
+    // Done Item
     doneItem = (index) => {
         const list = this.state.items; 
         const item = list[index]; 
@@ -46,6 +48,7 @@ export default class App extends Component {
         });
     }
 
+    // Remove Item
     removeItem = (value) => {
         items.splice(value, 1);
         this.setState({
@@ -53,6 +56,7 @@ export default class App extends Component {
         })
     }
 
+    // Add Item
     addItem = (item) =>{
         items.push(item);
         this.setState({
@@ -60,11 +64,28 @@ export default class App extends Component {
         })
     }
 
+    // Filters
+    filterDone = () => {
+        // const list = this.state.items; 
+        // let doneMas = [];
+        // list.map((index) => {
+        //     if(index.done){
+        //         doneMas.push(index);
+        //         this.setState({
+        //             items: doneMas  
+        //         });
+        //     }
+        // })      
+    }
+
     render() {
         return (
             <div className="container">
                 <AppHeader length = {this.state.items.length}/>
-                <SearchPanel />
+                <SearchPanel 
+                    items={this.state.items}
+                    filterDone={this.filterDone}
+                />
                 <ToDoList 
                     items = {this.state.items}
                     removeItem = {this.removeItem}
