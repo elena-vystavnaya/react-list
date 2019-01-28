@@ -7,21 +7,16 @@ import AddItem from './addItem/AddItem';
 
 let items = [
     {
-        label: "Drink Coffee",
-        important: false,
-        done: false
+        label: "Drink Coffee"
     },
     {
-        label: "Make Awesome App",
-        important: true,
-        done: false
+        label: "Make Awesome App"
     },
     {
-        label: "Have a lunch",
-        important: false,
-        done: false
+        label: "Have a lunch"
     }
 ]
+
 
 export default class App extends Component {
     constructor(props){
@@ -58,6 +53,13 @@ export default class App extends Component {
         })
     }
 
+    addItem = (item) =>{
+        items.push(item);
+        this.setState({
+            items: items
+        })
+    }
+
     render() {
         return (
             <div className="container">
@@ -68,9 +70,13 @@ export default class App extends Component {
                     removeItem = {this.removeItem}
                     importantItem={this.importantItem}
                     doneItem={this.doneItem}
+                    addItem={this.addItem}
                 />   
-                <AddItem />       
+                <AddItem 
+                    addItem={this.addItem}
+                />       
             </div>     
         )
     }
 }
+

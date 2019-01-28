@@ -1,14 +1,19 @@
 .add-item{
+    margin-top: 20px;  
     .btn{       
         background: #fff;
         color: rgb(91, 173, 187);
-        border-color: rgb(91, 173, 187);
-        margin-top: 10px;
-        float: right;
+        border-color: rgb(91, 173, 187); 
+        width: 106%; 
         &:hover{
             background: rgb(91, 173, 187);
             color: #fff;
             transition: all 0.4s ease-in-out;
         }
+    }
+
+    .form-control{
+        width: 104%;
+        margin-left: -15px;
     }
 }

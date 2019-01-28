@@ -13,7 +13,7 @@ export default class ToDoList extends Component{
         
         return (       
             this.props.items.map(function(index, item){
-
+                index.defaultProps = {important: false, done: false};
             return (
                     <ToDoItem 
                             label={index.label} 
