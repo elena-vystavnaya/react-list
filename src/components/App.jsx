@@ -37,7 +37,7 @@ export default class App extends Component {
         item.important = !item.important; //меняем текушее значение на противоположное
         list[index] = item; //обновляем клон
         this.setState({
-            items: list  //обновляем state
+            items: list  
         });
     }
 
