@@ -42,12 +42,12 @@ export default class App extends Component {
     }
 
     doneItem = (index) => {
-        const list = this.state.items; //клон items array
-        const item = list[index]; // items[item] кликнутый итем
-        item.done = !item.done; //меняем текушее значение на противоположное
-        list[index] = item; //обновляем клон
+        const list = this.state.items; 
+        const item = list[index]; 
+        item.done = !item.done; 
+        list[index] = item; 
         this.setState({
-            items: list  //обновляем state
+            items: list  
         });
     }
 
