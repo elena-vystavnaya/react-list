@@ -12,18 +12,17 @@ export default class ToDoList extends Component{
         let doneItem = this.props.doneItem;
         
         return (       
-            this.props.items.map(function(index, item){
-                index.defaultProps = {important: false, done: false};
+            this.props.items.map(function(item, index){
             return (
                     <ToDoItem 
-                            label={index.label} 
-                            important={index.important}
-                            done={index.done}
-                            key={item}
-                            keys={item}
-                            removeItem={removeItem}
-                            importantItem={importantItem}
-                            doneItem={doneItem}
+                            label={item.label} 
+                            important={item.important}
+                            show={item.show}
+                            done={item.done}
+                            key={index}
+                            removeItem={() => removeItem(index)}
+                            importantItem={() => importantItem(index)}
+                            doneItem={() => doneItem(index)}
                     />              
                 )
             })           

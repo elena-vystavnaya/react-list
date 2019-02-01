@@ -1,12 +1,14 @@
 .search{
-    .btn-group .btn{
-        background: #fff;
-        color: #333;
-    }
-
-    .btn-group .btn.btn-active{
-        background: rgb(91, 173, 187);
-        color: #fff;
-        border-color: rgb(91, 173, 187);
-    }
+    .btn-group {
+        .btn{
+            background: #fff;
+            color: #333;
+            border-color: rgb(91, 173, 187);
+        }
+        .btn-info{
+            background: rgb(91, 173, 187);
+            color: #fff;
+            border-color: rgb(91, 173, 187);
+        }
+    }  
 }

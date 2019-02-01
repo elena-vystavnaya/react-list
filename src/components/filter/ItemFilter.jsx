@@ -3,18 +3,29 @@ import React, { Component } from 'react';
 import './filter.scss';
 
 export default class ItemFilter extends Component {
-  render() {
+    
+    buttons = [
+        {name: 'all', label: 'All'},
+        {name: 'active', label: 'Active'},
+        {name: 'done', label: 'Done'}
+    ]
+    render() {   
+        const buttons = this.buttons.map(({name, label}, index) => {
+            const isActive = this.props.filter === name;
+            const active = isActive ? 'btn-info' : 'btn-secondary';
+            return(
+                <button 
+                    type="button"
+                    name={name}
+                    className={`btn ${active}`}
+                    key={index}
+                    onClick={() => this.props.onFilterChange(name)}
+                >{label}</button>
+            )
+        }) 
     return (
         <div className="btn-group" role="group" aria-label="Basic example">
-            <button type="button" className="btn btn-secondary btn-active">All</button>
-            <button type="button" className="btn btn-secondary">Active</button>
-            <button 
-                type="button" 
-                className="btn btn-secondary"
-				onClick={this.props.filterDone}
-            >
-            Done
-            </button>
+            {buttons}
         </div>
     )
   }

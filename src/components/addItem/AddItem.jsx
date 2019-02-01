@@ -18,7 +18,10 @@ export default class AddItem extends Component {
 
 	render() {
 		let newItem = {
-			label: this.state.value
+			label: this.state.value,
+			important: false,
+            done: false,
+            show: true  
 		}
 		return (
 			<div className="add-item row">
